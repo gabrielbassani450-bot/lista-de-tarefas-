@@ -1,36 +1,260 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 Aplicação de Listagem de Tarefas - Next.js 15 com Testes Unitários
 
-## Getting Started
+Uma aplicação moderna de gerenciamento de tarefas desenvolvida com Next.js 15, TypeScript e um suite completo de testes unitários usando Jest e React Testing Library.
 
-First, run the development server:
+## 🎯 Objetivo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Demonstrar a implementação prática de conceitos sobre testes unitários em Next.js 15, incluindo:
+
+- ✅ Componentes reutilizáveis e testáveis
+- ✅ Server Components e Client Components
+- ✅ Hooks personalizados com testes isolados
+- ✅ App Router (Nova arquitetura do Next.js)
+- ✅ Testes com Jest e React Testing Library
+
+## 🚀 Funcionalidades
+
+### Aplicação
+- **Exibir lista de tarefas** - Carregadas de dados simulados (como se fosse uma API)
+- **Adicionar novas tarefas** - Através de um formulário controlado
+- **Marcar tarefas como concluídas** - Alterar status com checkbox
+- **Contador de tarefas** - Exibir total, concluídas e pendentes em tempo real
+
+### Testes
+- **23 testes unitários** passando com sucesso
+- **Cobertura completa** dos componentes principais
+- **Testes isolados** do hook personalizado
+- **Testes de integração** dos componentes
+
+## 📋 Estrutura do Projeto
+
+```
+todo-app/
+├── src/
+│   ├── __tests__/
+│   │   ├── components/
+│   │   │   ├── NovaTarefa.test.tsx        # Testes do formulário
+│   │   │   ├── ListaTarefas.test.tsx      # Testes da lista
+│   │   │   └── ContadorTarefas.test.tsx   # Testes do contador
+│   │   └── hooks/
+│   │       └── useContadorDeTarefas.test.ts # Testes do hook
+│   ├── components/
+│   │   ├── NovaTarefa.tsx                 # Componente formulário
+│   │   ├── ListaTarefas.tsx               # Componente lista
+│   │   └── ContadorTarefas.tsx            # Componente contador
+│   ├── hooks/
+│   │   └── useContadorDeTarefas.ts        # Hook personalizado
+│   └── data/
+│       └── tarefas.ts                     # Dados simulados
+├── app/
+│   └── page.tsx                           # Server Component principal
+├── jest.config.js                         # Configuração Jest
+├── jest.setup.ts                          # Setup do Jest
+├── tsconfig.json                          # Configuração TypeScript
+├── package.json
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tecnologias Utilizadas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js 15** - Framework React com App Router
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **Jest** - Test runner
+- **React Testing Library** - Testing utilities
+- **ESLint** - Linting
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Pré-requisitos
 
-## Learn More
+- Node.js 18+ (recomendado 20+)
+- npm 9+ ou yarn
 
-To learn more about Next.js, take a look at the following resources:
+## 🔧 Instalação
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone o repositório**
+   ```bash
+   git clone <seu-repositorio-url>
+   cd todo-app
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Instale as dependências**
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+## ▶️ Como Executar
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Modo de Desenvolvimento
+```bash
+npm run dev
+```
+A aplicação estará disponível em [http://localhost:3000](http://localhost:3000)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Build para Produção
+```bash
+npm run build
+npm start
+```
+
+## 🧪 Testes
+
+### Executar todos os testes
+```bash
+npm test
+```
+
+### Modo watch (reexecutar ao salvar)
+```bash
+npm run test:watch
+```
+
+### Cobertura de testes
+```bash
+npm run test:coverage
+```
+
+## 📊 Resultados dos Testes
+
+```
+PASS  src/__tests__/hooks/useContadorDeTarefas.test.ts
+PASS  src/__tests__/components/ContadorTarefas.test.tsx
+PASS  src/__tests__/components/ListaTarefas.test.tsx
+PASS  src/__tests__/components/NovaTarefa.test.tsx
+
+Test Suites: 4 passed, 4 total
+Tests:       23 passed, 23 total
+```
+
+## 🧩 Componentes
+
+### `NovaTarefa`
+Componente Client que gerencia o formulário para adicionar novas tarefas.
+
+**Testes:**
+- ✅ Renderização do input e botão
+- ✅ Atualização do valor do input
+- ✅ Submissão do formulário com valor válido
+- ✅ Limpeza do input após adição
+- ✅ Validação de campos vazios
+- ✅ Trimming de espaços em branco
+
+### `ListaTarefas`
+Componente Client que exibe a lista de tarefas e permite marcar como concluídas.
+
+**Testes:**
+- ✅ Renderização da lista completa
+- ✅ Aplicação de estilos de conclusão
+- ✅ Toggle de status das tarefas
+- ✅ Mensagem quando não há tarefas
+- ✅ Estado de checkboxes
+
+### `ContadorTarefas`
+Componente Client que exibe contadores atualizados em tempo real.
+
+**Testes:**
+- ✅ Cálculo correto de totais
+- ✅ Cálculo de concluídas e pendentes
+- ✅ Atualização dinâmica
+- ✅ Valores zerados quando vazio
+
+## 🎣 Hook `useContadorDeTarefas`
+
+Hook personalizado que calcula estatísticas sobre as tarefas.
+
+**Retorna:**
+```typescript
+{
+  total: number;      // Total de tarefas
+  concluidas: number; // Tarefas concluídas
+  pendentes: number;  // Tarefas pendentes
+}
+```
+
+**Testes:**
+- ✅ Cálculo isolado de cada métrica
+- ✅ Atualização quando tarefas mudam
+- ✅ Valores corretos com arrays vazios
+- ✅ Tipagem correta do retorno
+
+## 📝 Exemplos de Testes
+
+### Teste do Componente
+```typescript
+it('deve chamar onAdicionarTarefa quando o formulário é enviado', async () => {
+  const mockOnAdicionar = jest.fn();
+  render(<NovaTarefa onAdicionarTarefa={mockOnAdicionar} />);
+
+  const input = screen.getByTestId('input-tarefa');
+  await userEvent.type(input, 'Nova tarefa');
+  fireEvent.click(screen.getByTestId('btn-adicionar'));
+
+  expect(mockOnAdicionar).toHaveBeenCalledTimes(1);
+});
+```
+
+### Teste do Hook
+```typescript
+it('deve retornar o número correto de tarefas concluídas', () => {
+  const tarefas = [
+    { id: '1', titulo: 'T1', concluida: true },
+    { id: '2', titulo: 'T2', concluida: false },
+  ];
+
+  const { result } = renderHook(() => useContadorDeTarefas(tarefas));
+
+  expect(result.current.concluidas).toBe(1);
+});
+```
+
+## 🔍 Verificação de Cobertura
+
+Para visualizar a cobertura de testes:
+```bash
+npm run test:coverage
+```
+
+Isso gerará um relatório em `coverage/` mostrando quais partes do código estão cobertas pelos testes.
+
+## 💡 Dicas de Desenvolvimento
+
+### Adicionar Novo Teste
+1. Crie um arquivo em `src/__tests__/` mantendo a estrutura
+2. Use `describe` e `it` para organizar
+3. Use `render`, `screen`, `fireEvent` do React Testing Library
+4. Para hooks, use `renderHook`
+
+### Estender Funcionalidades
+1. Novos componentes devem ser Client Components (`'use client'`)
+2. Adicione testes para cada novo componente
+3. Use o hook `useContadorDeTarefas` para funcionalidades estatísticas
+4. Mantenha o TypeScript strict
+
+## 🚀 Deploy
+
+Este projeto pode ser facilmente deployado no Vercel:
+
+```bash
+npm run build
+vercel
+```
+
+Ou usando qualquer outro provedor que suporte Next.js (Netlify, AWS, etc.).
+
+## 📚 Recursos de Aprendizado
+
+- [Documentação Next.js 15](https://nextjs.org/docs)
+- [Jest Documentation](https://jestjs.io/docs/getting-started)
+- [React Testing Library](https://testing-library.com/react)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/)
+
+## 📄 Licença
+
+Este projeto é fornecido como material educacional.
+
+## 👤 Autor
+
+Desenvolvido como exercício prático de testes unitários em Next.js 15.
+
+---
+
+**Última atualização:** 1 de fevereiro de 2026
