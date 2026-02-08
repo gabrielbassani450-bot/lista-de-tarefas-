@@ -1,16 +1,20 @@
-# 📝 Aplicação de Listagem de Tarefas - Next.js 15 com Testes Unitários
+# 📝 Aplicação de Listagem de Tarefas - Next.js 16 com Testes Unitários
 
-Uma aplicação moderna de gerenciamento de tarefas desenvolvida com Next.js 15, TypeScript e um suite completo de testes unitários usando Jest e React Testing Library.
+Uma aplicação moderna de gerenciamento de tarefas desenvolvida com Next.js 16, TypeScript e um suite completo de testes unitários usando Jest e React Testing Library.
 
 ## 🎯 Objetivo
 
-Demonstrar a implementação prática de conceitos sobre testes unitários em Next.js 15, incluindo:
+Demonstrar a implementação prática de conceitos sobre testes unitários em Next.js 16, incluindo:
 
 - ✅ Componentes reutilizáveis e testáveis
 - ✅ Server Components e Client Components
 - ✅ Hooks personalizados com testes isolados
 - ✅ App Router (Nova arquitetura do Next.js)
 - ✅ Testes com Jest e React Testing Library
+
+## 🌐 Deploy
+
+- Site publicado: https://gabrielbassani450-bot.github.io/lista-de-tarefas-/
 
 ## 🚀 Funcionalidades
 
@@ -57,7 +61,7 @@ todo-app/
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Next.js 15** - Framework React com App Router
+- **Next.js 16** - Framework React com App Router
 - **TypeScript** - Type safety
 - **Tailwind CSS** - Styling
 - **Jest** - Test runner
