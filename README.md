@@ -14,7 +14,7 @@ Demonstrar a implementação prática de conceitos sobre testes unitários em Ne
 
 ## 🌐 Deploy
 
-- Site publicado: https://gabrielbassani450-bot.github.io/lista-de-tarefas-/
+- Site publicado: https://lista-de-tarefas-steel-eight.vercel.app
 
 ## 🚀 Funcionalidades
 
