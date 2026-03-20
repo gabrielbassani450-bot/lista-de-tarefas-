@@ -1,7 +1,6 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { NovaTarefa } from '@/components/NovaTarefa';
-import { Tarefa } from '@/hooks/useContadorDeTarefas';
 
 describe('NovaTarefa', () => {
   it('deve renderizar o input e o botão', () => {
